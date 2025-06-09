@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { fadeInUp, staggerContainer } from '@/lib/utils'
 import Navigation from '@/components/Navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function HomePage() {
   const stats = [
@@ -86,7 +87,7 @@ export default function HomePage() {
             >
               <motion.div variants={fadeInUp} className="space-y-6">
                 <motion.span className="inline-block px-6 py-3 bg-blue-100 text-blue-700 rounded-full text-sm font-medium shadow-lg">
-                  🏏 Edmonton's Premier Cricket Academy
+                  🏏 Edmonton&apos;s Premier Cricket Academy
                 </motion.span>
                 
                 <motion.h1 className="text-5xl lg:text-8xl font-bold text-gray-900 leading-tight">
@@ -97,7 +98,7 @@ export default function HomePage() {
                 </motion.h1>
                 
                 <motion.p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
-                  Join Edmonton's most advanced cricket training facility. Professional coaching, 
+                  Join Edmonton&apos;s most advanced cricket training facility. Professional coaching, 
                   state-of-the-art equipment, and a community passionate about cricket excellence.
                 </motion.p>
               </motion.div>
@@ -117,7 +118,7 @@ export default function HomePage() {
 
               {/* Stats */}
               <motion.div variants={fadeInUp} className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
-                {stats.map((stat, index) => {
+                {stats.map((stat) => {
                   const IconComponent = stat.icon
                   return (
                     <motion.div 
@@ -152,9 +153,11 @@ export default function HomePage() {
                 whileHover={{ scale: 1.02, rotateY: 5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=700&h=600&fit=crop&crop=center" 
                   alt="Cricket Training at Pitch & Play"
+                  width={700}
+                  height={600}
                   className="w-full h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
@@ -211,7 +214,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <motion.h2 variants={fadeInUp} className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Why Choose Pitch & Play?
+              Why Choose Pitch &amp; Play?
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
               Experience cricket training like never before with our world-class facilities and expert coaching
@@ -229,9 +232,11 @@ export default function HomePage() {
               <motion.div key={feature.title} variants={fadeInUp} custom={index}>
                 <Card className="overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group bg-white">
                   <div className="relative">
-                    <img 
+                    <Image 
                       src={feature.image}
                       alt={feature.title}
+                      width={400}
+                      height={256}
                       className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -290,11 +295,13 @@ export default function HomePage() {
                         <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <p className="text-gray-700 mb-6 italic leading-relaxed">"{testimonial.content}"</p>
+                    <p className="text-gray-700 mb-6 italic leading-relaxed">&ldquo;{testimonial.content}&rdquo;</p>
                     <div className="flex items-center space-x-4">
-                      <img 
+                      <Image 
                         src={testimonial.image}
                         alt={testimonial.name}
+                        width={48}
+                        height={48}
                         className="w-12 h-12 rounded-full object-cover"
                       />
                       <div>
@@ -330,7 +337,7 @@ export default function HomePage() {
               Ready to Start Your Cricket Journey?
             </h2>
             <p className="text-xl lg:text-2xl text-blue-100 mb-10 leading-relaxed">
-              Join Edmonton's premier cricket academy today. Professional training, 
+              Join Edmonton&apos;s premier cricket academy today. Professional training, 
               modern facilities, and a community that shares your passion for cricket.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

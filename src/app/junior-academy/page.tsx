@@ -2,11 +2,12 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Users, Trophy, Target, Clock, Star, Calendar } from 'lucide-react'
+import { ArrowRight, Users, Trophy, Target, Clock, Calendar } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { fadeInUp, staggerContainer } from '@/lib/utils'
 import Navigation from '@/components/Navigation'
+import Image from 'next/image'
 
 const JuniorAcademyPage = () => {
   const programs = [
@@ -114,7 +115,7 @@ const JuniorAcademyPage = () => {
                 </motion.h1>
                 
                 <motion.p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                  Nurture your child's cricket potential with our comprehensive junior development programs. 
+                  Nurture your child&apos;s cricket potential with our comprehensive junior development programs. 
                   From beginner basics to elite performance training.
                 </motion.p>
               </motion.div>
@@ -141,15 +142,17 @@ const JuniorAcademyPage = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&crop=center" 
                   alt="Junior Cricket Training"
+                  width={600}
+                  height={400}
                   className="w-full h-[400px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-white">
                   <p className="text-xl font-semibold">Professional Junior Training</p>
-                  <p className="text-green-200">Building Tomorrow's Stars</p>
+                  <p className="text-green-200">Building Tomorrow&apos;s Stars</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -182,13 +185,15 @@ const JuniorAcademyPage = () => {
             viewport={{ once: true }}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {programs.map((program, index) => (
-              <motion.div key={program.id} variants={fadeInUp} custom={index}>
+            {programs.map((program) => (
+              <motion.div key={program.id} variants={fadeInUp}>
                 <Card className="h-full overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group">
                   <div className="relative">
-                    <img 
+                    <Image 
                       src={program.image}
                       alt={program.name}
+                      width={400}
+                      height={192}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 shadow-lg">
@@ -288,9 +293,11 @@ const JuniorAcademyPage = () => {
               <motion.div key={coach.name} variants={fadeInUp} custom={index}>
                 <Card className="p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center space-x-4">
-                    <img 
+                    <Image 
                       src={coach.image}
                       alt={coach.name}
+                      width={80}
+                      height={80}
                       className="w-20 h-20 rounded-full object-cover"
                     />
                     <div>
@@ -321,7 +328,7 @@ const JuniorAcademyPage = () => {
             className="max-w-3xl mx-auto text-white"
           >
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Ready to Start Your Child's Cricket Journey?
+              Ready to Start Your Child&apos;s Cricket Journey?
             </h2>
             <p className="text-xl text-green-100 mb-8">
               Join hundreds of young cricketers who have developed their skills with us. 

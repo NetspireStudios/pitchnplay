@@ -2,11 +2,12 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, Users, ShoppingBag, Wrench, Target, Award, Clock, MapPin, Phone, ArrowRight } from 'lucide-react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Calendar, Users, ShoppingBag, Wrench, Target, Clock, MapPin, Phone, ArrowRight } from 'lucide-react'
+import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { fadeInUp, staggerContainer } from '@/lib/utils'
 import Navigation from '@/components/Navigation'
+import Image from 'next/image'
 
 const ServicesPage = () => {
   const detailedServices = [
@@ -207,9 +208,11 @@ const ServicesPage = () => {
                 className="relative rounded-2xl overflow-hidden shadow-2xl"
                 whileHover={{ scale: 1.02 }}
               >
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=500&fit=crop&crop=center" 
                   alt="Cricket Services"
+                  width={600}
+                  height={500}
                   className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -318,9 +321,11 @@ const ServicesPage = () => {
                       whileHover={{ scale: 1.03 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <img 
+                      <Image 
                         src={service.image}
                         alt={service.title}
+                        width={600}
+                        height={400}
                         className="w-full h-[400px] object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -365,9 +370,11 @@ const ServicesPage = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <img 
+                    <Image 
                       src={facility.image}
                       alt={facility.name}
+                      width={400}
+                      height={192}
                       className="w-full h-48 object-cover"
                     />
                   </motion.div>

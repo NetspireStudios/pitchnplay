@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { fadeInUp, staggerContainer } from '@/lib/utils'
 import Navigation from '@/components/Navigation'
+import Image from 'next/image'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -135,12 +136,12 @@ const ContactPage = () => {
                 <motion.h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
                   Contact
                   <span className="block bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-                    Pitch & Play
+                    Pitch &amp; Play
                   </span>
                 </motion.h1>
                 
                 <motion.p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                  Ready to start your cricket journey? Get in touch with us today. We're here to help you 
+                  Ready to start your cricket journey? Get in touch with us today. We&apos;re here to help you 
                   with bookings, coaching, equipment, and any questions you might have.
                 </motion.p>
               </motion.div>
@@ -167,9 +168,11 @@ const ContactPage = () => {
                 className="relative rounded-2xl overflow-hidden shadow-2xl"
                 whileHover={{ scale: 1.02 }}
               >
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=500&fit=crop&crop=center" 
                   alt="Contact Pitch & Play"
+                  width={600}
+                  height={500}
                   className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -200,7 +203,7 @@ const ContactPage = () => {
               How to Reach Us
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose your preferred way to get in touch. We're always ready to help!
+              Choose your preferred way to get in touch. We&apos;re always ready to help!
             </motion.p>
           </motion.div>
 
@@ -260,7 +263,7 @@ const ContactPage = () => {
                     Send us a Message
                   </CardTitle>
                   <CardDescription className="text-lg text-gray-600">
-                    Fill out the form below and we'll get back to you within 2 hours
+                    Fill out the form below and we&apos;ll get back to you within 2 hours
                   </CardDescription>
                 </CardHeader>
                 <CardContent>

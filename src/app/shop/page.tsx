@@ -2,11 +2,12 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ShoppingCart, Star, Filter, Grid, List, Search, ArrowRight, Heart, Eye } from 'lucide-react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { ShoppingCart, Star, Filter, Grid, List, ArrowRight, Heart, Eye } from 'lucide-react'
+import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { fadeInUp, staggerContainer } from '@/lib/utils'
 import Navigation from '@/components/Navigation'
+import Image from 'next/image'
 
 const ShopPage = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
@@ -214,9 +215,11 @@ const ShopPage = () => {
                 className="relative rounded-2xl overflow-hidden shadow-2xl"
                 whileHover={{ scale: 1.02 }}
               >
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=500&fit=crop&crop=center" 
                   alt="Cricket Equipment"
+                  width={600}
+                  height={500}
                   className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -259,9 +262,11 @@ const ShopPage = () => {
               <motion.div key={product.id} variants={fadeInUp} custom={index}>
                 <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500">
                   <div className="relative">
-                    <img 
+                    <Image 
                       src={product.image}
                       alt={product.name}
+                      width={300}
+                      height={256}
                       className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 rounded text-xs font-medium">
@@ -390,9 +395,11 @@ const ShopPage = () => {
                   <motion.div key={product.id} variants={fadeInUp} custom={index}>
                     <Card className={`group overflow-hidden border-0 shadow-md hover:shadow-lg transition-all duration-300 ${viewMode === 'list' ? 'flex-row flex' : ''}`}>
                       <div className={`relative ${viewMode === 'list' ? 'w-48 flex-shrink-0' : ''}`}>
-                        <img 
+                        <Image 
                           src={product.image}
                           alt={product.name}
+                          width={viewMode === 'list' ? 192 : 300}
+                          height={viewMode === 'list' ? 192 : 192}
                           className={`object-cover group-hover:scale-105 transition-transform duration-300 ${
                             viewMode === 'list' ? 'w-full h-full' : 'w-full h-48'
                           }`}

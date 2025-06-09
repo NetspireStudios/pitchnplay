@@ -1,15 +1,23 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react'
 import { Button } from './ui/button'
-import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -17,8 +25,7 @@ const Navigation = () => {
     { 
       name: 'Services', 
       href: '/services',
-      hasDropdown: true,
-      dropdownItems: [
+      dropdown: [
         { name: 'Lane Rental', href: '/services#lane-rental' },
         { name: 'Cricket Coaching', href: '/services#coaching' },
         { name: 'Equipment & Retail', href: '/services#equipment' },
@@ -30,85 +37,67 @@ const Navigation = () => {
     { name: 'Contact', href: '/contact' }
   ]
 
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
-      {/* Top contact bar */}
-      <div className="bg-blue-600 text-white py-2 px-4">
-        <div className="container mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <Mail className="w-4 h-4" />
-              <span>info@pitchandplay.ca</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Phone className="w-4 h-4" />
-              <span>+1 (780) 234-3339</span>
-            </div>
-          </div>
-          <div className="hidden md:block text-sm">
-            8227 Roper Road, NW, Edmonton, Alberta, T6E 6S4
-          </div>
-        </div>
-      </div>
+  const toggleMenu = () => setIsOpen(!isOpen)
 
-      {/* Main navigation */}
+  return (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
+          : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center space-x-2"
-          >
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">P</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Pitch & Play</h1>
-                <p className="text-xs text-gray-600">Cricket Academy</p>
-              </div>
-            </Link>
-          </motion.div>
+          <Link href="/" className="flex items-center space-x-3">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-600 rounded-lg flex items-center justify-center"
+            >
+              <span className="text-white font-bold text-xl">P&P</span>
+            </motion.div>
+            <div className="hidden sm:block">
+              <h1 className="text-xl font-bold text-gray-900">Pitch & Play</h1>
+              <p className="text-xs text-gray-600">Cricket Academy</p>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <div key={item.name} className="relative">
-                {item.hasDropdown ? (
+          <div className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <div key={item.name} className="relative group">
+                {item.dropdown ? (
                   <div
-                    className="relative"
-                    onMouseEnter={() => setIsServicesOpen(true)}
-                    onMouseLeave={() => setIsServicesOpen(false)}
+                    className="flex items-center space-x-1 cursor-pointer py-2"
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
                   >
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors cursor-pointer relative group"
+                    <Link 
+                      href={item.href}
+                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
                     >
-                      <Link href={item.href} className="flex items-center space-x-1">
-                        <span>{item.name}</span>
-                        <ChevronDown className="w-4 h-4" />
-                      </Link>
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-                    </motion.div>
-
+                      {item.name}
+                    </Link>
+                    <ChevronDown className="w-4 h-4 text-gray-400" />
+                    
                     <AnimatePresence>
-                      {isServicesOpen && (
+                      {servicesOpen && (
                         <motion.div
-                          initial={{ opacity: 0, y: -10 }}
+                          initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2"
+                          exit={{ opacity: 0, y: 10 }}
+                          className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden"
                         >
-                          {item.dropdownItems?.map((dropItem) => (
+                          {item.dropdown.map((dropdownItem) => (
                             <Link
-                              key={dropItem.name}
-                              href={dropItem.href}
-                              className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                              key={dropdownItem.name}
+                              href={dropdownItem.href}
+                              className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                             >
-                              {dropItem.name}
+                              {dropdownItem.name}
                             </Link>
                           ))}
                         </motion.div>
@@ -116,96 +105,107 @@ const Navigation = () => {
                     </AnimatePresence>
                   </div>
                 ) : (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="relative group"
+                  <Link 
+                    href={item.href}
+                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
                   >
-                    <Link
-                      href={item.href}
-                      className="text-gray-700 hover:text-blue-600 transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-                  </motion.div>
+                    {item.name}
+                  </Link>
                 )}
               </div>
             ))}
           </div>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">Login</Button>
-            <Button size="sm">Book Now</Button>
+          {/* Contact Info */}
+          <div className="hidden xl:flex items-center space-x-6">
+            <div className="flex items-center space-x-2 text-sm">
+              <Phone className="w-4 h-4 text-green-600" />
+              <span className="text-gray-700">+1 (780) 234-3339</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm">
+              <Mail className="w-4 h-4 text-blue-600" />
+              <span className="text-gray-700">info@pitchandplay.ca</span>
+            </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </Button>
+          {/* CTA Button */}
+          <div className="hidden lg:block">
+            <Link href="/contact">
+              <Button className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700">
+                Book Session
+              </Button>
+            </Link>
           </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={toggleMenu}
+            className="lg:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 transition-colors"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-200"
+            className="lg:hidden bg-white border-t border-gray-200 shadow-lg"
           >
-            <div className="container mx-auto px-4 py-4">
-              <div className="flex flex-col space-y-4">
-                {navItems.map((item, index) => (
+            <div className="container mx-auto px-4 py-6">
+              <div className="space-y-4">
+                {navItems.map((item) => (
                   <div key={item.name}>
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
+                    <Link
+                      href={item.href}
+                      className="block py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      onClick={() => setIsOpen(false)}
                     >
-                      <Link
-                        href={item.href}
-                        className="text-gray-700 hover:text-blue-600 transition-colors py-2 border-b border-gray-100 block"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    </motion.div>
-                    {item.hasDropdown && (
-                      <div className="ml-4 mt-2 space-y-2">
-                        {item.dropdownItems?.map((dropItem) => (
+                      {item.name}
+                    </Link>
+                    {item.dropdown && (
+                      <div className="ml-4 space-y-2 mt-2">
+                        {item.dropdown.map((dropdownItem) => (
                           <Link
-                            key={dropItem.name}
-                            href={dropItem.href}
-                            className="block text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
+                            key={dropdownItem.name}
+                            href={dropdownItem.href}
+                            className="block py-1 text-sm text-gray-600 hover:text-blue-600 transition-colors"
                             onClick={() => setIsOpen(false)}
                           >
-                            {dropItem.name}
+                            {dropdownItem.name}
                           </Link>
                         ))}
                       </div>
                     )}
                   </div>
                 ))}
-                <div className="flex flex-col space-y-2 pt-4">
-                  <Button variant="outline" size="sm">Login</Button>
-                  <Button size="sm">Book Now</Button>
+                
+                {/* Mobile Contact */}
+                <div className="pt-4 border-t border-gray-200 space-y-3">
+                  <div className="flex items-center space-x-2">
+                    <Phone className="w-4 h-4 text-green-600" />
+                    <span className="text-gray-700">+1 (780) 234-3339</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Mail className="w-4 h-4 text-blue-600" />
+                    <span className="text-gray-700">info@pitchandplay.ca</span>
+                  </div>
+                  <Link href="/contact" onClick={() => setIsOpen(false)}>
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 mt-4">
+                      Book Session
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   )
 }
 
