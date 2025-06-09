@@ -61,7 +61,7 @@ const ServicesPage = () => {
       title: "Equipment & Retail",
       subtitle: "Premium Cricket Gear",
       description: "Complete range of cricket equipment from top brands, with expert fitting and customization services.",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=400&fit=crop&crop=center",
       features: [
         "Premium cricket bats",
         "Protective gear and pads",

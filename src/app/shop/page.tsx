@@ -30,7 +30,7 @@ const ShopPage = () => {
       originalPrice: 349.99,
       rating: 4.8,
       reviews: 45,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=300&fit=crop&crop=center",
       category: "bats",
       featured: true,
       inStock: true,
@@ -44,7 +44,7 @@ const ShopPage = () => {
       originalPrice: null,
       rating: 4.6,
       reviews: 32,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
       category: "protective",
       featured: false,
       inStock: true,
@@ -58,7 +58,7 @@ const ShopPage = () => {
       originalPrice: 79.99,
       rating: 4.5,
       reviews: 28,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=300&h=300&fit=crop&crop=center",
       category: "apparel",
       featured: false,
       inStock: true,
@@ -72,7 +72,7 @@ const ShopPage = () => {
       originalPrice: null,
       rating: 4.7,
       reviews: 41,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=300&h=300&fit=crop&crop=center",
       category: "protective",
       featured: true,
       inStock: true,
@@ -86,7 +86,7 @@ const ShopPage = () => {
       originalPrice: null,
       rating: 4.9,
       reviews: 67,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=300&h=300&fit=crop&crop=center",
       category: "accessories",
       featured: false,
       inStock: true,
@@ -100,7 +100,7 @@ const ShopPage = () => {
       originalPrice: 159.99,
       rating: 4.4,
       reviews: 23,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop&crop=center",
       category: "protective",
       featured: false,
       inStock: false,
@@ -114,7 +114,7 @@ const ShopPage = () => {
       originalPrice: null,
       rating: 4.8,
       reviews: 35,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=300&h=300&fit=crop&crop=center",
       category: "protective",
       featured: true,
       inStock: true,
@@ -128,7 +128,7 @@ const ShopPage = () => {
       originalPrice: 149.99,
       rating: 4.6,
       reviews: 29,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=300&fit=crop&crop=center",
       category: "accessories",
       featured: false,
       inStock: true,
@@ -216,7 +216,7 @@ const ShopPage = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <Image 
-                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=500&fit=crop&crop=center" 
+                  src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=500&fit=crop&crop=center" 
                   alt="Cricket Equipment"
                   width={600}
                   height={500}

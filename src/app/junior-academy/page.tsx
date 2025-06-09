@@ -35,7 +35,7 @@ const JuniorAcademyPage = () => {
       age: "13-17 years", 
       description: "Advanced training preparing for competitive cricket",
       features: ["Advanced techniques", "Strategy & tactics", "Fitness training", "Match preparation"],
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=400&h=300&fit=crop",
       color: "purple",
       price: "$120/month"
     }

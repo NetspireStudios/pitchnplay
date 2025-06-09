@@ -154,7 +154,7 @@ export default function HomePage() {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 <Image 
-                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=700&h=600&fit=crop&crop=center" 
+                  src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=700&h=600&fit=crop&crop=center" 
                   alt="Cricket Training at Pitch & Play"
                   width={700}
                   height={600}
