@@ -114,46 +114,46 @@ const ContactPage = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50 via-white to-blue-50 pt-24 pb-12 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-green-50 via-white to-blue-50 pt-24 pb-8 lg:pb-12 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-green-100 rounded-full opacity-50 blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center py-20">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-12 lg:py-20">
             <motion.div
               variants={staggerContainer}
               initial="initial"
               animate="animate"
-              className="space-y-8"
+              className="space-y-6 lg:space-y-8 text-center lg:text-left"
             >
               <motion.div variants={fadeInUp} className="space-y-4">
                 <motion.span className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                   📞 Get In Touch
                 </motion.span>
                 
-                <motion.h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                <motion.h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
                   Contact
                   <span className="block bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                     Pitch &amp; Play
                   </span>
                 </motion.h1>
                 
-                <motion.p className="text-xl text-gray-600 leading-relaxed max-w-xl">
+                <motion.p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
                   Ready to start your cricket journey? Get in touch with us today. We&apos;re here to help you 
                   with bookings, coaching, equipment, and any questions you might have.
                 </motion.p>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="grid grid-cols-2 gap-4">
-                <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-                  <p className="text-2xl font-bold text-green-600">24/7</p>
-                  <p className="text-sm text-gray-600">Available</p>
+              <motion.div variants={fadeInUp} className="grid grid-cols-2 gap-3 lg:gap-4">
+                <div className="text-center p-3 lg:p-4 bg-white rounded-lg shadow-sm">
+                  <p className="text-xl lg:text-2xl font-bold text-green-600">24/7</p>
+                  <p className="text-xs lg:text-sm text-gray-600">Available</p>
                 </div>
-                <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-                  <p className="text-2xl font-bold text-blue-600">2hr</p>
-                  <p className="text-sm text-gray-600">Response Time</p>
+                <div className="text-center p-3 lg:p-4 bg-white rounded-lg shadow-sm">
+                  <p className="text-xl lg:text-2xl font-bold text-blue-600">2hr</p>
+                  <p className="text-xs lg:text-sm text-gray-600">Response Time</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -162,7 +162,7 @@ const ContactPage = () => {
               variants={fadeInUp}
               initial="initial"
               animate="animate"
-              className="relative"
+              className="relative order-first lg:order-last"
             >
               <motion.div
                 className="relative rounded-2xl overflow-hidden shadow-2xl"
@@ -173,12 +173,12 @@ const ContactPage = () => {
                   alt="Contact Pitch & Play"
                   width={600}
                   height={500}
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <p className="text-xl font-semibold mb-2">Visit Our Modern Facility</p>
-                  <div className="flex items-center space-x-4 text-sm">
+                <div className="absolute bottom-4 lg:bottom-6 left-4 lg:left-6 right-4 lg:right-6 text-white">
+                  <p className="text-lg lg:text-xl font-semibold mb-2">Visit Our Modern Facility</p>
+                  <div className="flex flex-wrap items-center gap-2 lg:gap-4 text-sm">
                     <span className="flex items-center"><MapPin className="w-4 h-4 mr-1" />Edmonton, Alberta</span>
                     <span className="flex items-center"><Clock className="w-4 h-4 mr-1" />Open Daily</span>
                   </div>
@@ -190,19 +190,19 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Methods */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 lg:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 lg:mb-16"
           >
-            <motion.h2 variants={fadeInUp} className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
               How to Reach Us
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <motion.p variants={fadeInUp} className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Choose your preferred way to get in touch. We&apos;re always ready to help!
             </motion.p>
           </motion.div>
@@ -212,28 +212,28 @@ const ContactPage = () => {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
           >
             {contactMethods.map((method, index) => {
               const IconComponent = method.icon
               return (
                 <motion.div key={method.title} variants={fadeInUp} custom={index}>
-                  <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
-                    <CardContent className="p-8">
+                  <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 group bg-white h-full">
+                    <CardContent className="p-6 lg:p-8">
                       <motion.div
-                        className={`w-16 h-16 bg-gradient-to-br ${colorClasses[method.color as keyof typeof colorClasses]} rounded-full flex items-center justify-center mx-auto mb-6`}
+                        className={`w-14 lg:w-16 h-14 lg:h-16 bg-gradient-to-br ${colorClasses[method.color as keyof typeof colorClasses]} rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-6`}
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                       >
-                        <IconComponent className="w-8 h-8 text-white" />
+                        <IconComponent className="w-6 lg:w-8 h-6 lg:h-8 text-white" />
                       </motion.div>
                       
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
-                      <p className="text-lg font-semibold text-blue-600 mb-1">{method.primary}</p>
+                      <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
+                      <p className="text-base lg:text-lg font-semibold text-blue-600 mb-1">{method.primary}</p>
                       <p className="text-sm text-green-600 font-medium mb-2">{method.secondary}</p>
                       <p className="text-gray-600 text-sm mb-4">{method.description}</p>
                       
-                      <Button className={`bg-gradient-to-r ${colorClasses[method.color as keyof typeof colorClasses]} hover:shadow-lg transition-all duration-300`}>
+                      <Button className={`w-full bg-gradient-to-r ${colorClasses[method.color as keyof typeof colorClasses]} hover:shadow-lg transition-all duration-300`}>
                         Contact
                       </Button>
                     </CardContent>
@@ -246,9 +246,9 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
             {/* Contact Form */}
             <motion.div
               variants={fadeInUp}
@@ -257,18 +257,18 @@ const ContactPage = () => {
               viewport={{ once: true }}
             >
               <Card className="border-0 shadow-xl">
-                <CardHeader className="pb-8">
-                  <CardTitle className="text-3xl font-bold text-gray-900 flex items-center">
-                    <Send className="w-8 h-8 mr-3 text-blue-600" />
+                <CardHeader className="pb-6 lg:pb-8">
+                  <CardTitle className="text-2xl lg:text-3xl font-bold text-gray-900 flex items-center">
+                    <Send className="w-6 lg:w-8 h-6 lg:h-8 mr-3 text-blue-600" />
                     Send us a Message
                   </CardTitle>
-                  <CardDescription className="text-lg text-gray-600">
+                  <CardDescription className="text-base lg:text-lg text-gray-600">
                     Fill out the form below and we&apos;ll get back to you within 2 hours
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
+                  <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                           Full Name *
@@ -280,7 +280,7 @@ const ContactPage = () => {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-base"
                           placeholder="Your full name"
                         />
                       </div>
@@ -295,13 +295,13 @@ const ContactPage = () => {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-base"
                           placeholder="your@email.com"
                         />
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                           Phone Number
@@ -312,7 +312,7 @@ const ContactPage = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-base"
                           placeholder="+1 (780) 234-3339"
                         />
                       </div>
@@ -325,7 +325,7 @@ const ContactPage = () => {
                           name="serviceType"
                           value={formData.serviceType}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-base"
                         >
                           <option value="">Select a service</option>
                           <option value="lane-rental">Lane Rental</option>
@@ -350,7 +350,7 @@ const ContactPage = () => {
                         value={formData.subject}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-base"
                         placeholder="What would you like to discuss?"
                       />
                     </div>
@@ -366,16 +366,16 @@ const ContactPage = () => {
                         onChange={handleInputChange}
                         required
                         rows={6}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none text-base"
                         placeholder="Tell us more about your inquiry..."
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-3">
                         Preferred Contact Method
                       </label>
-                      <div className="flex space-x-4">
+                      <div className="flex flex-wrap gap-4">
                         <label className="flex items-center">
                           <input
                             type="radio"
@@ -383,9 +383,9 @@ const ContactPage = () => {
                             value="email"
                             checked={formData.preferredContact === 'email'}
                             onChange={handleInputChange}
-                            className="mr-2"
+                            className="mr-2 w-4 h-4"
                           />
-                          Email
+                          <span className="text-base">Email</span>
                         </label>
                         <label className="flex items-center">
                           <input
@@ -394,9 +394,9 @@ const ContactPage = () => {
                             value="phone"
                             checked={formData.preferredContact === 'phone'}
                             onChange={handleInputChange}
-                            className="mr-2"
+                            className="mr-2 w-4 h-4"
                           />
-                          Phone
+                          <span className="text-base">Phone</span>
                         </label>
                         <label className="flex items-center">
                           <input
@@ -405,16 +405,16 @@ const ContactPage = () => {
                             value="whatsapp"
                             checked={formData.preferredContact === 'whatsapp'}
                             onChange={handleInputChange}
-                            className="mr-2"
+                            className="mr-2 w-4 h-4"
                           />
-                          WhatsApp
+                          <span className="text-base">WhatsApp</span>
                         </label>
                       </div>
                     </div>
 
                     <Button 
                       type="submit" 
-                      className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-lg py-4"
+                      className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-base lg:text-lg py-4 h-auto"
                     >
                       <Send className="w-5 h-5 mr-2" />
                       Send Message
@@ -430,35 +430,35 @@ const ContactPage = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="space-y-8"
+              className="space-y-6 lg:space-y-8"
             >
               {/* Operating Hours */}
               <motion.div variants={fadeInUp}>
                 <Card className="border-0 shadow-lg">
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
-                      <Clock className="w-6 h-6 mr-3 text-green-600" />
+                    <CardTitle className="text-xl lg:text-2xl font-bold text-gray-900 flex items-center">
+                      <Clock className="w-5 lg:w-6 h-5 lg:h-6 mr-3 text-green-600" />
                       Operating Hours
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-3 lg:space-y-4">
                     {operatingHours.map((schedule, index) => (
                       <motion.div
                         key={schedule.day}
-                        className={`flex justify-between items-center p-4 rounded-lg ${
+                        className={`flex justify-between items-center p-3 lg:p-4 rounded-lg ${
                           schedule.type === 'weekend' ? 'bg-green-50 border border-green-200' : 'bg-gray-50'
                         }`}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1 }}
                       >
-                        <span className="font-medium text-gray-900">{schedule.day}</span>
-                        <span className={`font-semibold ${schedule.type === 'weekend' ? 'text-green-600' : 'text-blue-600'}`}>
+                        <span className="font-medium text-gray-900 text-sm lg:text-base">{schedule.day}</span>
+                        <span className={`font-semibold text-sm lg:text-base ${schedule.type === 'weekend' ? 'text-green-600' : 'text-blue-600'}`}>
                           {schedule.hours}
                         </span>
                       </motion.div>
                     ))}
-                    <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border border-blue-200">
+                    <div className="mt-4 lg:mt-6 p-3 lg:p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border border-blue-200">
                       <p className="text-sm text-gray-700">
                         <strong>24/7 Availability:</strong> We offer round-the-clock access by appointment. 
                         Call us anytime to schedule your session!
@@ -472,35 +472,35 @@ const ContactPage = () => {
               <motion.div variants={fadeInUp}>
                 <Card className="border-0 shadow-lg">
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-gray-900">
+                    <CardTitle className="text-xl lg:text-2xl font-bold text-gray-900">
                       Quick Actions
                     </CardTitle>
                     <CardDescription>
                       Common requests - get started immediately
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-3 lg:space-y-4">
                     {quickActions.map((action, index) => {
                       const IconComponent = action.icon
                       return (
                         <motion.div
                           key={action.title}
-                          className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
+                          className="flex items-center justify-between p-3 lg:p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
                           whileHover={{ scale: 1.02 }}
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.1 }}
                         >
-                          <div className="flex items-center space-x-4">
-                            <div className={`w-12 h-12 bg-gradient-to-br ${colorClasses[action.color as keyof typeof colorClasses]} rounded-lg flex items-center justify-center`}>
-                              <IconComponent className="w-6 h-6 text-white" />
+                          <div className="flex items-center space-x-3 lg:space-x-4">
+                            <div className={`w-10 lg:w-12 h-10 lg:h-12 bg-gradient-to-br ${colorClasses[action.color as keyof typeof colorClasses]} rounded-lg flex items-center justify-center`}>
+                              <IconComponent className="w-5 lg:w-6 h-5 lg:h-6 text-white" />
                             </div>
                             <div>
-                              <h4 className="font-semibold text-gray-900">{action.title}</h4>
-                              <p className="text-sm text-gray-600">{action.description}</p>
+                              <h4 className="font-semibold text-gray-900 text-sm lg:text-base">{action.title}</h4>
+                              <p className="text-xs lg:text-sm text-gray-600">{action.description}</p>
                             </div>
                           </div>
-                          <Button size="sm" className={`bg-gradient-to-r ${colorClasses[action.color as keyof typeof colorClasses]}`}>
+                          <Button size="sm" className={`bg-gradient-to-r ${colorClasses[action.color as keyof typeof colorClasses]} text-xs lg:text-sm`}>
                             {action.action}
                           </Button>
                         </motion.div>
@@ -513,15 +513,15 @@ const ContactPage = () => {
               {/* Location Map Placeholder */}
               <motion.div variants={fadeInUp}>
                 <Card className="border-0 shadow-lg overflow-hidden">
-                  <div className="h-64 bg-gradient-to-br from-green-500 via-blue-500 to-green-600 relative">
+                  <div className="h-48 lg:h-64 bg-gradient-to-br from-green-500 via-blue-500 to-green-600 relative">
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-white text-center">
-                        <MapPin className="w-16 h-16 mx-auto mb-4" />
-                        <p className="text-xl font-semibold">Find Us Here</p>
-                        <p className="text-blue-100">8227 Roper Road, NW</p>
-                        <p className="text-blue-100">Edmonton, Alberta T6E 6S4</p>
-                        <Button className="mt-4 bg-white text-blue-600 hover:bg-gray-100">
+                      <div className="text-white text-center px-4">
+                        <MapPin className="w-12 lg:w-16 h-12 lg:h-16 mx-auto mb-3 lg:mb-4" />
+                        <p className="text-lg lg:text-xl font-semibold">Find Us Here</p>
+                        <p className="text-blue-100 text-sm lg:text-base">8227 Roper Road, NW</p>
+                        <p className="text-blue-100 text-sm lg:text-base">Edmonton, Alberta T6E 6S4</p>
+                        <Button className="mt-3 lg:mt-4 bg-white text-blue-600 hover:bg-gray-100 text-sm lg:text-base">
                           <NavigationIcon className="w-4 h-4 mr-2" />
                           Get Directions
                         </Button>

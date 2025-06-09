@@ -161,39 +161,39 @@ const ServicesPage = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-12 lg:py-20">
             <motion.div
               variants={staggerContainer}
               initial="initial"
               animate="animate"
-              className="space-y-8"
+              className="space-y-6 lg:space-y-8 text-center lg:text-left"
             >
-              <motion.div variants={fadeInUp} className="space-y-4">
-                <motion.span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+              <motion.div variants={fadeInUp} className="space-y-4 lg:space-y-6">
+                <motion.span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-xs lg:text-sm font-medium">
                   🏏 Professional Cricket Services
                 </motion.span>
                 
-                <motion.h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
                   Complete Cricket
                   <span className="block bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
                     Solutions
                   </span>
                 </motion.h1>
                 
-                <motion.p className="text-xl text-gray-600 leading-relaxed max-w-xl">
+                <motion.p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
                   From professional lane rentals to expert coaching and equipment services. 
                   Everything you need to excel in cricket under one roof.
                 </motion.p>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="grid grid-cols-2 gap-4">
-                <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-                  <p className="text-2xl font-bold text-blue-600">5+</p>
-                  <p className="text-sm text-gray-600">Services Offered</p>
+              <motion.div variants={fadeInUp} className="grid grid-cols-2 gap-3 lg:gap-4">
+                <div className="text-center p-3 lg:p-4 bg-white rounded-lg shadow-sm">
+                  <p className="text-xl sm:text-2xl font-bold text-blue-600">5+</p>
+                  <p className="text-xs lg:text-sm text-gray-600">Services Offered</p>
                 </div>
-                <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-                  <p className="text-2xl font-bold text-green-600">24/7</p>
-                  <p className="text-sm text-gray-600">Availability</p>
+                <div className="text-center p-3 lg:p-4 bg-white rounded-lg shadow-sm">
+                  <p className="text-xl sm:text-2xl font-bold text-green-600">24/7</p>
+                  <p className="text-xs lg:text-sm text-gray-600">Availability</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -202,7 +202,7 @@ const ServicesPage = () => {
               variants={fadeInUp}
               initial="initial"
               animate="animate"
-              className="relative"
+              className="relative order-first lg:order-last"
             >
               <motion.div
                 className="relative rounded-2xl overflow-hidden shadow-2xl"
@@ -213,12 +213,12 @@ const ServicesPage = () => {
                   alt="Cricket Services"
                   width={600}
                   height={500}
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <p className="text-xl font-semibold mb-2">Professional Cricket Facility</p>
-                  <div className="flex items-center space-x-4 text-sm">
+                <div className="absolute bottom-4 lg:bottom-6 left-4 lg:left-6 right-4 lg:right-6 text-white">
+                  <p className="text-lg lg:text-xl font-semibold mb-2">Professional Cricket Facility</p>
+                  <div className="flex flex-wrap items-center gap-2 lg:gap-4 text-sm">
                     <span className="flex items-center"><MapPin className="w-4 h-4 mr-1" />Edmonton, AB</span>
                     <span className="flex items-center"><Clock className="w-4 h-4 mr-1" />24/7 Access</span>
                   </div>
@@ -230,24 +230,24 @@ const ServicesPage = () => {
       </section>
 
       {/* Detailed Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 lg:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 lg:mb-16"
           >
-            <motion.h2 variants={fadeInUp} className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
               Our Services
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <motion.p variants={fadeInUp} className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Comprehensive cricket services designed to support players at every level
             </motion.p>
           </motion.div>
 
-          <div className="space-y-20">
+          <div className="space-y-12 lg:space-y-20">
             {detailedServices.map((service, index) => {
               const IconComponent = service.icon
               const isEven = index % 2 === 0
@@ -259,46 +259,46 @@ const ServicesPage = () => {
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true }}
-                  className={`grid lg:grid-cols-2 gap-12 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}
+                  className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}
                 >
                   <div className={`${!isEven ? 'lg:col-start-2' : ''}`}>
-                    <div className="space-y-6">
-                      <div className="flex items-center space-x-4">
-                        <div className={`w-16 h-16 bg-gradient-to-br ${colorClasses[service.color as keyof typeof colorClasses]} rounded-xl flex items-center justify-center`}>
-                          <IconComponent className="w-8 h-8 text-white" />
+                    <div className="space-y-4 lg:space-y-6">
+                      <div className="flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                        <div className={`w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${colorClasses[service.color as keyof typeof colorClasses]} rounded-xl flex items-center justify-center mx-auto sm:mx-0`}>
+                          <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        <div>
-                          <h3 className="text-3xl font-bold text-gray-900">{service.title}</h3>
-                          <p className="text-lg text-gray-600">{service.subtitle}</p>
+                        <div className="text-center sm:text-left">
+                          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{service.title}</h3>
+                          <p className="text-base lg:text-lg text-gray-600">{service.subtitle}</p>
                         </div>
                       </div>
 
-                      <p className="text-gray-700 text-lg leading-relaxed">{service.description}</p>
+                      <p className="text-gray-700 text-base lg:text-lg leading-relaxed">{service.description}</p>
 
                       <div className="space-y-3">
-                        <h4 className="font-semibold text-gray-900">Features Include:</h4>
-                        <div className="grid md:grid-cols-2 gap-2">
+                        <h4 className="font-semibold text-gray-900 text-sm lg:text-base">Features Include:</h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {service.features.map((feature, featureIndex) => (
                             <div key={featureIndex} className="flex items-center space-x-2">
-                              <div className={`w-2 h-2 bg-gradient-to-r ${colorClasses[service.color as keyof typeof colorClasses]} rounded-full`}></div>
-                              <span className="text-sm text-gray-700">{feature}</span>
+                              <div className={`w-2 h-2 bg-gradient-to-r ${colorClasses[service.color as keyof typeof colorClasses]} rounded-full flex-shrink-0`}></div>
+                              <span className="text-xs lg:text-sm text-gray-700">{feature}</span>
                             </div>
                           ))}
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4">
                         {service.pricing.map((price, priceIndex) => (
                           <div 
                             key={priceIndex} 
-                            className={`p-4 rounded-lg border-2 text-center ${
+                            className={`p-3 lg:p-4 rounded-lg border-2 text-center ${
                               price.popular 
                                 ? 'border-blue-500 bg-blue-50' 
                                 : 'border-gray-200 bg-white'
                             }`}
                           >
-                            <p className="font-semibold text-gray-900">{price.duration}</p>
-                            <p className={`text-lg font-bold ${price.popular ? 'text-blue-600' : 'text-gray-900'}`}>
+                            <p className="font-semibold text-gray-900 text-sm lg:text-base">{price.duration}</p>
+                            <p className={`text-base lg:text-lg font-bold ${price.popular ? 'text-blue-600' : 'text-gray-900'}`}>
                               {price.price}
                             </p>
                             {price.popular && (
@@ -308,14 +308,14 @@ const ServicesPage = () => {
                         ))}
                       </div>
 
-                      <Button className={`bg-gradient-to-r ${colorClasses[service.color as keyof typeof colorClasses]} text-white`}>
+                      <Button className={`w-full sm:w-auto bg-gradient-to-r ${colorClasses[service.color as keyof typeof colorClasses]} text-white text-sm lg:text-base`}>
                         Book {service.title}
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </div>
                   </div>
 
-                  <div className={`${!isEven ? 'lg:col-start-1' : ''}`}>
+                  <div className={`${!isEven ? 'lg:col-start-1' : ''} order-first lg:order-none ${!isEven ? 'lg:order-first' : ''}`}>
                     <motion.div
                       className="relative rounded-2xl overflow-hidden shadow-xl"
                       whileHover={{ scale: 1.03 }}
@@ -326,7 +326,7 @@ const ServicesPage = () => {
                         alt={service.title}
                         width={600}
                         height={400}
-                        className="w-full h-[400px] object-cover"
+                        className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </motion.div>
