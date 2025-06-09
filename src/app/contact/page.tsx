@@ -169,7 +169,7 @@ const ContactPage = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <Image 
-                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=500&fit=crop&crop=center" 
+                  src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&h=500&fit=crop&crop=center" 
                   alt="Contact Pitch & Play"
                   width={600}
                   height={500}

@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, Users, ShoppingBag, Wrench, Target, Clock, MapPin, Phone, ArrowRight } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
+import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { fadeInUp, staggerContainer } from '@/lib/utils'
 import Navigation from '@/components/Navigation'
@@ -17,7 +17,7 @@ const ServicesPage = () => {
       title: "Lane Rental",
       subtitle: "Professional Cricket Lanes",
       description: "State-of-the-art cricket lanes available 24/7 for individual practice, team training, and corporate events.",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&h=400&fit=crop&crop=center",
       features: [
         "Two full run-up lanes (30 yards)",
         "Two short practice lanes (25 yards)", 
@@ -39,7 +39,7 @@ const ServicesPage = () => {
       title: "Cricket Coaching",
       subtitle: "International Standard Training",
       description: "Expert coaching from international players including personalized training programs and technical analysis.",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=600&h=400&fit=crop&crop=center",
       features: [
         "Individual coaching sessions",
         "Group training programs",
@@ -83,7 +83,7 @@ const ServicesPage = () => {
       title: "Bowling Machine Training",
       subtitle: "BOLA Professional Machines",
       description: "Advanced bowling machine sessions with automatic feeders for consistent and varied practice.",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&crop=center",
       features: [
         "BOLA professional grade machines",
         "Automatic ball feeding system",
@@ -105,7 +105,7 @@ const ServicesPage = () => {
       title: "Bat Services",
       subtitle: "Repair & Maintenance",
       description: "Professional bat repair, knocking, and maintenance services to keep your equipment in perfect condition.",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=400&fit=crop&crop=center",
       features: [
         "Expert bat repair services",
         "Handle replacement",
@@ -134,17 +134,17 @@ const ServicesPage = () => {
   const facilities = [
     {
       name: "Professional Cricket Lanes",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=400&h=300&fit=crop&crop=center",
       description: "4 lanes with full run-up space"
     },
     {
       name: "Modern Equipment Room",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center",
       description: "Latest BOLA bowling machines"
     },
     {
       name: "Retail Showroom",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=300&fit=crop&crop=center",
       description: "Premium cricket equipment"
     }
   ]
@@ -209,7 +209,7 @@ const ServicesPage = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <Image 
-                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=500&fit=crop&crop=center" 
+                  src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&h=500&fit=crop&crop=center" 
                   alt="Cricket Services"
                   width={600}
                   height={500}
@@ -365,23 +365,21 @@ const ServicesPage = () => {
           >
             {facilities.map((facility, index) => (
               <motion.div key={facility.name} variants={fadeInUp} custom={index}>
-                <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <div className="relative">
                     <Image 
                       src={facility.image}
                       alt={facility.name}
                       width={400}
-                      height={192}
-                      className="w-full h-48 object-cover"
+                      height={240}
+                      className="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                  </motion.div>
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{facility.name}</h3>
-                    <p className="text-gray-600">{facility.description}</p>
-                  </CardContent>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <h3 className="text-lg font-bold mb-1">{facility.name}</h3>
+                      <p className="text-sm opacity-90">{facility.description}</p>
+                    </div>
+                  </div>
                 </Card>
               </motion.div>
             ))}
@@ -389,28 +387,36 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600">
-        <div className="container mx-auto px-4 text-center">
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-black/20"></div>
+          <div className="absolute -top-20 -right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             variants={fadeInUp}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-white"
+            className="max-w-4xl mx-auto text-white"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Ready to Book Our Services?
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6">
+              Ready to Book Your Cricket Experience?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
-              Contact us today to discuss your cricket training needs and book your preferred services.
+            <p className="text-xl lg:text-2xl text-blue-100 mb-10 leading-relaxed">
+              Whether you need lane rental, coaching, or equipment, we&apos;re here to support your cricket journey. 
+              Contact us today to get started!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-                <Phone className="mr-2 w-5 h-5" />
-                Call +1 (780) 234-3339
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 h-auto shadow-xl">
+                <Phone className="mr-2 w-6 h-6" />
+                Call Now: (780) 234-3339
               </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 h-auto">
+                <Calendar className="mr-2 w-6 h-6" />
                 Book Online
               </Button>
             </div>

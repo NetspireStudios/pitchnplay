@@ -17,7 +17,7 @@ const JuniorAcademyPage = () => {
       age: "5-8 years",
       description: "Introduction to cricket fundamentals through fun games and activities",
       features: ["Basic ball handling", "Simple batting", "Fun team games", "Motor skill development"],
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
       color: "blue",
       price: "$80/month"
     },
@@ -26,7 +26,7 @@ const JuniorAcademyPage = () => {
       age: "9-12 years",
       description: "Structured coaching focusing on technique and game understanding",
       features: ["Proper batting technique", "Bowling basics", "Fielding positions", "Match situations"],
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=400&h=300&fit=crop",
       color: "green",
       price: "$100/month"
     },
@@ -181,7 +181,7 @@ const JuniorAcademyPage = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 <Image 
-                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=700&h=600&fit=crop" 
+                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&h=600&fit=crop" 
                   alt="Junior Cricket Training"
                   width={700}
                   height={600}
@@ -411,7 +411,7 @@ const JuniorAcademyPage = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <Image 
-                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=500&fit=crop" 
+                  src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=600&h=500&fit=crop" 
                   alt="Junior Academy Features"
                   width={600}
                   height={500}

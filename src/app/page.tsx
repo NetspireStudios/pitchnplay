@@ -22,19 +22,19 @@ export default function HomePage() {
     {
       title: "Professional Coaching",
       description: "Learn from international players with years of professional experience",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=400&h=300&fit=crop&crop=center",
       link: "/services#coaching"
     },
     {
       title: "Modern Facilities",
       description: "State-of-the-art cricket lanes with professional equipment and climate control",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=400&h=300&fit=crop&crop=center",
       link: "/services#lane-rental"
     },
     {
       title: "Youth Development",
       description: "Comprehensive junior programs designed to nurture young cricket talent",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center",
       link: "/junior-academy"
     }
   ]
